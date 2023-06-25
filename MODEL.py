@@ -21,3 +21,16 @@ df.head() #returns 5 rows from dataset
 df.isna.sum() #isan return either true or false for each column + sum (as the number of columns are more we prefer taking the total as a whole)
 
 #3.NORMALISATION
+df = df.iloc[:, 1:] #IGNORING THE FIRST ROW all rows selected and first column ex. #rows, columns
+df_norm = (df-df.mean())/df.std() #normalising 
+df_norm.head()
+#labels:
+#predicted value to back normal form 
+y_mean = df['price'].mean() #mean(orginal distribution)
+y_std = df['price'].std()
+
+#defining a function:
+def convert_label_value(pred):
+    return int(pred*y_std+y_mean) #y=mx+c format
+
+print(convert_label_value(0.350088)) #checking the pred.
