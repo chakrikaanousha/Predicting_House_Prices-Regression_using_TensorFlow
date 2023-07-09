@@ -34,3 +34,21 @@ def convert_label_value(pred):
     return int(pred*y_std+y_mean) #y=mx+c format
 
 print(convert_label_value(0.350088)) #checking the pred.
+
+#4. TRAINING AND TEST SETS:
+#REMOVE price column - as(price is the ouput that we want to predict) 
+x=df.norm.iloc[:, :6]
+x.head() #prints out the table withoud the price 
+
+#select labels for the data table:
+y= df_norm.iloc[:,-1]
+y.head() #seperated prices table 
+
+#features and label values:
+x_arr =x.values
+y_arr = y.values
+print("features array shape:" + x_arr.shape)
+print("labels array shape:" + x_arr.shape)
+
+
+
