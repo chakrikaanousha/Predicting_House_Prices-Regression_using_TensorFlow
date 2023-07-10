@@ -37,7 +37,7 @@ print(convert_label_value(0.350088)) #checking the pred.
 
 #4. TRAINING AND TEST SETS:
 #REMOVE price column - as(price is the ouput that we want to predict) 
-x=df.norm.iloc[:, :6]
+x=df_norm.iloc[:, :6]
 x.head() #prints out the table withoud the price 
 
 #select labels for the data table:
@@ -48,7 +48,42 @@ y.head() #seperated prices table
 x_arr =x.values
 y_arr = y.values
 print("features array shape:" + x_arr.shape)
-print("labels array shape:" + x_arr.shape)
+print("labels array shape:" + y_arr.shape)
+
+#splitting the data: Trainig + Testing set:
+x_train, x_test, y_train, y_test = train_test_split(x_arr, y_arr, test_size=0.05, random_state=0) #test size : 5% of the total data
+print("training set: ", x_tain.shape, y_train.shape) #training set shape 
+print("training set: ", x_tain.shape, y_train.shape) #testing set shape
+
+#MODEL TRAINING:
+#Create a model:
+# using 3 neural network architecture - relu activaation function (on all layers - expect the output layer) 
+def get_model():
+    #using sequential class from keras- can pass in list of layers to create an architecture
+    #3hiddden layers
+    #laye 1 - Dense (10 nodes input - list of 6 value, activation fxn : rectified linear unit
+    #layer 2 &3 - Dense with 20 and 5 nodes , activation function = relu
+    #layer 4 - output 
+
+    # all the layers are fully connected layers - no of parameters= no.of nodes
+   #creating the model
+    model = Sequential([
+    Dense(10, input_shape = (6,), activation ='relu'), 
+    Dense(20, activation ='relu'),
+    Dense(5, activation = 'relu'),
+        Dense(1) #as its a regression problem just need linear values - no actv. fxn requried
+    ])
+
+#compiling the model
+model.compller(
+    #Optimiser: minimize loss function:
+    loss = 'mse', #loss function mean square error
+    optimizer = 'adam' #optimization: adam function
+)
+    return model
+
+#summarizing the model:
+get_model.summary()
 
 
 
