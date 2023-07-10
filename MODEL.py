@@ -75,7 +75,7 @@ def get_model():
     ])
 
 #compiling the model
-model.compller(
+model.complie(
     #Optimiser: minimize loss function:
     loss = 'mse', #loss function mean square error
     optimizer = 'adam' #optimization: adam function
@@ -83,7 +83,15 @@ model.compller(
     return model
 
 #summarizing the model:
-get_model.summary()
+get_model().summary()
+#calculaiton of paradms
+
+#MODEL TRAINING:
+#earlyStopping - call back from keras , wait for (patience) seconds if val loss not changing then stops the training:
+es_cb = EarlyStopping(monitor='val_loss', patience =5)
+#create  a model using get model function:
+model = get_model()
+preds_on_untrained=model.predict(x_test)
 
 
 
