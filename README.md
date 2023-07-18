@@ -1,43 +1,47 @@
-# Predicting_House_Prices-Regression_using_TensorFlow
-💻Predicting House Prices with Regression using TensorFlow Coursera Project Network
+# Predicting House Prices: Regression using TensorFlow
 
-# Evaluting price of Houses by using following features:
+💻 Coursera Project Network: Predicting House Prices with Regression using TensorFlow
 
-### Input Featuers
+## Evaluating House Prices Based on the Following Features:
 
-1.   Year of sale of the House
-2.   The age of the house at the time of sale
-3.   Distance from city center
-4.  Number of stores in the locality
-5.  The latitude
-6.  The longitude
+### Input Features
 
-## STEPS:
-### 1. Importing Libraries
-List of libraries imported:
+1. Year of sale of the house
+2. Age of the house at the time of sale
+3. Distance from the city center
+4. Number of stores in the locality
+5. Latitude
+6. Longitude
 
-  Tensorflow
-  
-  pandas
-  
-  matplotlib.pyplot
-  
-  utils
-  
-  sklearn.model_selection --> train_test_split
-  
-  tensorflow.keras.models --> Sequential
-  
-  tensorflow.keras.layers --> Dense, Dropout
-  
-  tensorflow.keras.callbacks --> EarlyStopping, LambdaCallback
+## Steps:
 
-  
-2. Importing Data
-3. Data Normalization
-4. Creating Training and Testing Sets
-5. Create Model
-6. Model Training
-7. Predictions
+1. Importing Libraries:
+   - TensorFlow
+   - Pandas
+   - Matplotlib.pyplot
+   - Utils
+   - Sklearn.model_selection: train_test_split
+   - Tensorflow.keras.models: Sequential
+   - Tensorflow.keras.layers: Dense, Dropout
+   - Tensorflow.keras.callbacks: EarlyStopping, LambdaCallback
 
+2. Importing Data:
+   - Data imported from a CSV file using the Pandas library.
 
+3. Data Normalization:
+   - Apply Z-score normalization to obtain normalized values and bring features into the same range.
+
+4. Creating Training and Testing Sets:
+   - Splitting the given data into training and testing sets using the Tensorflow library's split function.
+
+5. Create Model:
+   - Building a model using the Sequential library from Keras, consisting of 3 layers and 1 hidden layer.
+
+6. Model Training:
+   - Training the model using the training data, utilizing a loss function and optimizer.
+
+7. Predictions:
+   - Validating the predictions and evaluating accuracy with the results.
+
+## License:
+All rights belong to Coursera.
